@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8 offset-md-2">
       <h2 class="text-center">Reactive Form</h2>
       <form [formGroup]="signUp" (ngSubmit)="onSignUp()">
         <p>predefined validator</p>
@@ -150,31 +150,6 @@
           {{ f['aadharNumber'].errors?.['aadharNumberError'] }}
         </p>
 
-        <!-- <div class="form-group">
-          
-          <label for="female">
-            <input
-              type="radio"
-              value="female"
-              formControlName="gender"
-              id="female"
-              name="gender"
-            />
-            Female</label
-          >
-
-          <label for="male"
-            ><input
-              type="radio"
-              value="male"
-              formControlName="gender"
-              id="male"
-              name="gender"
-            />
-            Male</label
-          >
-        </div> -->
-
         <div class="form-group">
           <label class="mr-2" [for]="gender" *ngFor="let gender of genderArr">
             <input
@@ -186,10 +161,124 @@
             />{{ gender }}
           </label>
         </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="isaddsame">
+                <input
+                  type="checkbox"
+                  id="isaddsame"
+                  formControlName="isaddsame"
+                />
+                Is address same as permanent Address</label
+              >
+            </div>
+          </div>
+
+          <div class="col-md-6" formGroupName="currentAddress">
+            <h3>Current Address</h3>
+            <div class="form-group">
+              <label for="cacountry">Country</label>
+              <select
+                id="cacountry"
+                formControlName="country"
+                class="form-control"
+              >
+                <option
+                  [value]="country.Country_Name"
+                  *ngFor="let country of countryArr"
+                >
+                  {{ country.Country_Name }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="castate">State</label>
+              <select id="castate" formControlName="state" class="form-control">
+                <option
+                  [value]="state.stateName"
+                  *ngFor="let state of indState"
+                >
+                  {{ state.stateName }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cacity">City</label>
+              <input
+                type="text"
+                id="cacity"
+                formControlName="city"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="capincode">Pincode</label>
+              <input
+                type="text"
+                id="capincode"
+                formControlName="pincode"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="col-md-6" formGroupName="permanentAddress">
+            <h3>Permanent Address</h3>
+
+            <div class="form-group">
+              <label for="pacountry">Country</label>
+              <select
+                id="pacountry"
+                formControlName="country"
+                class="form-control"
+              >
+                <option
+                  [value]="country.Country_Name"
+                  *ngFor="let country of countryArr"
+                >
+                  {{ country.Country_Name }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="pastate">State</label>
+              <select id="pastate" formControlName="state" class="form-control">
+                <option
+                  [value]="state.stateName"
+                  *ngFor="let state of indState"
+                >
+                  {{ state.stateName }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="pacity">City</label>
+              <input
+                type="text"
+                id="pacity"
+                formControlName="city"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="papincode">Pincode</label>
+              <input
+                type="text"
+                id="papincode"
+                formControlName="pincode"
+                class="form-control"
+              />
+            </div>
+          </div>
+        </div>
+
         <div class="card-footer text-right">
           <button class="btn btn-sm btn-primary" type="submit">Sign Up</button>
         </div>
         {{ signUp.value | json }}
+        <br />
+        {{ signUp.getRawValue | json }}
       </form>
     </div>
   </div>

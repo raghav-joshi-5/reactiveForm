@@ -4,7 +4,7 @@ export class aadharcardValidaor {
   public static aadharNumber(
     control: AbstractControl
   ): ValidationErrors | null {
-    let regex = /^\d{4}\s?\d{4}\s?\d{4}$/;
+    let regex = /^\d{4}\s\d{4}\s\d{4}$/;
     let aadharNumber = control.value;
     if (!aadharNumber) {
       return null;

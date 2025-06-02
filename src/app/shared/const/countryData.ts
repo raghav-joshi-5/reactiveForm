@@ -1,4 +1,6 @@
-const countryData = [
+import { Icountry } from '../module/country';
+
+export const countryData: Array<Icountry> = [
   {
     Country_Name: 'AFGHANISTAN',
     Currency: 'Afghani',
@@ -37,6 +39,7 @@ const countryData = [
   {
     Country_Name: 'ANTARCTICA',
     Currency: 'No universal currency',
+    ISO4217: '',
   },
   {
     Country_Name: 'ANTIGUA AND BARBUDA',
@@ -901,6 +904,7 @@ const countryData = [
   {
     Country_Name: 'PALESTINE, STATE OF',
     Currency: 'No universal currency',
+    ISO4217: '',
   },
   {
     Country_Name: 'PANAMA',
@@ -1100,6 +1104,7 @@ const countryData = [
   {
     Country_Name: 'SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS',
     Currency: 'No universal currency',
+    ISO4217: '',
   },
   {
     Country_Name: 'SOUTH SUDAN',

@@ -2,7 +2,7 @@ import { AbstractControl, ValidationErrors } from '@angular/forms';
 
 export class panCardvalidator {
   public static panCard(control: AbstractControl): ValidationErrors | null {
-    let regex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+    let regex = /^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$/;
     let panNumber = control.value;
     if (!panNumber) {
       return null;
